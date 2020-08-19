@@ -209,7 +209,7 @@ class MousePoser(object):
     def _read_kernels(self):
         # Go ahead and grab the kernel code
         raster_kernel_path = os.path.join(os.path.dirname(__file__), "raster_test.cu")
-        print raster_kernel_path
+        print(raster_kernel_path)
         with open(raster_kernel_path) as kernel_file:
             self._kernel_code_template = kernel_file.read()
         # In this kernel, currently no formatting
@@ -229,7 +229,7 @@ class MousePoser(object):
                                     offsets=self.mouseRotations_cpu)
         timeElapsed = time.time() - start
         micePerSec = numRounds*self.numMicePerPass / timeElapsed
-        print "Posed %f mice/sec" % micePerSec
+        print("Posed %f mice/sec" % micePerSec)
 
     def get_likelihoods(self, joint_angles, scales, offsets, rotations, real_mouse_image=None, save_poses=False):
 
